@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/login">
+        Login
+      </ion-button>
+      <ion-button routerLink="/cerca-film">
+        Cerca film
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="options"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>DA GUARDARE</p>
+  <div class="container">
+    <div class="items">
+      <ion-label class="film" *ngFor="let item of items" [ngClass]="{'expanded': seleziona_film && filmPP === item, 'collapsed': !(seleziona_film && filmPP === item)}" (click)="seleziona_film = true; filmPP= item">{{ item.title }}
+        <div class="div_buttons" [ngClass]="{'expanded': seleziona_film && filmPP === item, 'collapsed': !(seleziona_film && filmPP === item)}">
+          <ion-button *ngIf="seleziona_film === true && filmPP === item" (click)="film_selezionato = true">Salva come gia visto</ion-button>
+          <ion-button *ngIf="film_selezionato === true && filmPP === item" (click)="salvaFilm(filmPP)" class="green-button">Salva</ion-button>
+          <ion-button *ngIf="film_selezionato === true && filmPP === item" (click)="rifiuta(); seleziona_film = false" class="red-button">rifiuta</ion-button>
+        </div>
+      </ion-label>
+    </div>
+
+    <div class="image-content">
+      <div *ngIf="items.length === 0">
+        Nessun elemento da visualizzare.
+      </div>
+      <div *ngFor="let item of items; let i = index" class="film-container">
+        <img [src]="item.poster_path" alt="Film Image" class="film-image" [id]="'image-' + i" />
+      </div>
+    </div>
+  </div>
+
+  <p>VISTI</p>
+  <div class="container">
+    <div class="items">
+      <ion-label class="film" *ngFor="let item2 of items2" [ngClass]="{'expanded': seleziona_film2 && (filmPP2 === item2 || filmPP3 === item2), 'collapsed': !(seleziona_film2 && (filmPP2 === item2 || filmPP3 === item2))}" (click)="seleziona_film2 = true; filmPP2 = item2; filmPP3 = item2">{{ item2.title }}
+        <div class="div_buttons" [ngClass]="{'expanded': seleziona_film2 && (filmPP2 === item2 || filmPP3 === item2), 'collapsed': !(seleziona_film2 && (filmPP2 === item2 || filmPP3 === item2))}">
+          <ion-button *ngIf="seleziona_film2 === true && filmPP2 === item2" (click)="funzione11()">Salva come da vedere</ion-button>
+          <ion-button *ngIf="seleziona_film2 === true && filmPP3 === item2" (click)="funzione12()">Elimina</ion-button>
+          <ion-button *ngIf="film_selezionato2 === true && filmPP2 === item2" (click)="funzione21(item2); seleziona_film2 = false" class="green-button">accetta</ion-button>
+          <ion-button *ngIf="film_selezionato2 === true && filmPP2 === item2" (click)="funzione22(); seleziona_film2 = false" class="red-button">rifiuta</ion-button>
+          <ion-button *ngIf="film_selezionato3 === true && filmPP3 === item2" (click)="funzione31(item2); seleziona_film2 = false" class="green-button">accetta</ion-button>
+          <ion-button *ngIf="film_selezionato3 === true && filmPP3 === item2" (click)="funzione32(); seleziona_film2 = false" class="red-button">rifiuta</ion-button>
+        </div>
+      </ion-label>
+    </div>
+
+    <div class="image-content">
+      <div *ngIf="items.length === 0">
+        Nessun elemento da visualizzare.
+      </div>
+      <div *ngFor="let item of items2; let i = index" class="film-container">
+        <img [src]="item.poster_path" alt="Film Image" class="film-image" [id]="'image-' + i" />
+      </div>
+    </div>
+  </div>
+
+</ion-content>
+

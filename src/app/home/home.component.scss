@@ -1,0 +1,111 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar .start {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toolbar .end {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar ion-button.options::part(native) {
+  font-size: 24px;
+  color: #ff0000;
+}
+
+.green-button::part(native) {
+  background-color: green;
+}
+
+.green-button {
+  background-color: green;
+  color: white;
+}
+
+.red-button::part(native) {
+  background-color: red;
+}
+
+.red-button {
+  background-color: red;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.scroll-container {
+  padding: 10px;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+.image-content {
+  flex-grow: 1;
+  min-height: 40px;
+  background-color: LightGray;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.film-container {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.film-image {
+  height: 90px;
+  width: auto;
+}
+
+.film {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.expanded {
+  white-space: normal;
+  overflow: visible;
+}
+
+.collapsed {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.expanded .div_buttons,
+.collapsed .div_buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.collapsed .div_buttons {
+  display: none;
+}
+

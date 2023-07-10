@@ -1,0 +1,102 @@
+
+<ion-content class="ion-padding">
+  <input type="text" [(ngModel)]="searchQuery">
+  <button (click)="searchByMovie(searchQuery)">Cerca</button>
+
+
+
+<ion-item>
+  <ion-select aria-label="Generi" interface="popover" placeholder="Generi" [(ngModel)]="selectedGenre" (ionChange)="searchByGenre(selectedGenre)">
+    <ion-select-option value="28">Azione</ion-select-option>
+    <ion-select-option value="12">Avventura</ion-select-option>
+    <ion-select-option value="16">Animazione</ion-select-option>
+    <ion-select-option value="35">Commedia</ion-select-option>
+    <ion-select-option value="80">Crime</ion-select-option>
+    <ion-select-option value="99">Documentario</ion-select-option>
+    <ion-select-option value="18">Drammatico</ion-select-option>
+    <ion-select-option value="10751">Famiglia</ion-select-option>
+    <ion-select-option value="14">Fantasy</ion-select-option>
+    <ion-select-option value="36">Storico</ion-select-option>
+    <ion-select-option value="27">Horror</ion-select-option>
+    <ion-select-option value="10402">Musica</ion-select-option>
+    <ion-select-option value="9648">Mistero</ion-select-option>
+    <ion-select-option value="10749">Romantico</ion-select-option>
+    <ion-select-option value="878">Fantascienza</ion-select-option>
+    <ion-select-option value="10770">Film TV</ion-select-option>
+    <ion-select-option value="53">Thriller</ion-select-option>
+    <ion-select-option value="10752">Guerra</ion-select-option>
+    <ion-select-option value="37">Western</ion-select-option>
+  </ion-select>
+</ion-item>
+
+
+
+
+
+   <p>ULTIME USCITE</p>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let movie of sortedMovies">
+        <img [src]="movie.poster_path" alt="{{ movie.title }}" (click)="showMovieDetails(movie)">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <div *ngIf="selectedMovie">
+       <h2>{{ selectedMovie.title }}</h2>
+    <p>{{ selectedMovie.overview }}</p>
+    <p>Data: {{ selectedMovie.release_date }}</p>
+    <p>Voto: {{ selectedMovie.vote_average }}</p>
+    <p>Numero voti: {{ selectedMovie.vote_count }}</p>
+     <button (click)="saveFilm(selectedMovie)">SALVA</button>
+        <p *ngIf="saveSuccess">Film salvato con successo!</p>
+<p *ngIf="saveError">Errore durante il salvataggio del film.</p>
+  </div>
+
+  <p>PIU QUOTATI</p>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let movie of sortedMovies2">
+        <img [src]="movie.poster_path" alt="{{ movie.title }}" (click)="showMovieDetails2(movie)">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <div *ngIf="selectedMovie2">
+    <h2>{{ selectedMovie2.title }}</h2>
+    <p>{{ selectedMovie2.overview }}</p>
+    <p>Data: {{ selectedMovie2.release_date }}</p>
+    <p>Voto: {{ selectedMovie2.vote_average }}</p>
+    <p>Numero voti: {{ selectedMovie2.vote_count }}</p>
+     <button (click)="saveFilm(selectedMovie2)">SALVA</button>
+        <p *ngIf="saveSuccess">Film salvato con successo!</p>
+<p *ngIf="saveError">Errore durante il salvataggio del film.</p>
+  </div>
+
+  <p>ALTRI RISULTATI</p>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let movie of movies">
+        <img [src]="movie.poster_path" alt="{{ movie.title }}" (click)="showMovieDetails3(movie)">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <div *ngIf="selectedMovie3">
+      <h2>{{ selectedMovie3.title }}</h2>
+    <p>{{ selectedMovie3.overview }}</p>
+    <p>Data: {{ selectedMovie3.release_date }}</p>
+    <p>Voto: {{ selectedMovie3.vote_average }}</p>
+    <p>Numero voti: {{ selectedMovie3.vote_count }}</p>
+     <button (click)="saveFilm(selectedMovie3)">SALVA</button>
+     <p *ngIf="saveSuccess">Film salvato con successo!</p>
+<p *ngIf="saveError">Errore durante il salvataggio del film.</p>
+
+  </div>
+</ion-content>

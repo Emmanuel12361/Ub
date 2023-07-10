@@ -1,0 +1,62 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Modificato per allineare in alto */
+  align-items: center;
+  height: 100vh;
+  margin-bottom: 5px;
+}
+
+.login-container form {
+  width: 300px;
+  padding: 2rem;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 0; /* Rimossa la margin-top */
+}
+
+/* Resto del CSS rimane invariato */
+
+/* Resto del CSS rimane invariato */
+
+/* Resto del CSS rimane invariato */
+
+/* Resto del CSS rimane invariato */
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3071a9;
+}
+.sign {
+  float: right;
+  background-color: green;
+  color: white;
+}
+

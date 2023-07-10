@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.swiper-container {
+  width: 100%;
+  height: 270px;
+  overflow: auto;
+  margin-top: 0px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  overflow: hidden;
+  margin-right: 10px; /* Aggiungi uno spazio tra le slide */
+}
+
+.swiper-wrapper {
+  display: flex;
+  width: fit-content;
+   margin-top: 0px;
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+   margin-top: 0px;
+  margin: 10px; /* Aggiungi spazio tra l'immagine e il titolo */
+}
+
+.small-image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.section-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+p {
+margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif; /* Sostituisci con il nome del font desiderato */
+  font-size: 20px; /* Aggiungi la dimensione del testo desiderata */
+  text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+}
+
